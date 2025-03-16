@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 from src.constants import OUTPUT_SAVE_DIR, RESSOURCE_DIR, ROOT_DIR
-from src.html import encode_image, write_html_and_pdf
+from src.html_utils import encode_image, write_html_and_pdf
 from src.plots import plot_donut, plot_occupation_categories
 
 REPORT_YEAR = 2024
@@ -16,8 +16,8 @@ def main():
 
     for _, row in df.iterrows():
         id = row["ID"]
-        print(id)
-        save_path = OUTPUT_SAVE_DIR/ f"pompier_{id}"
+        print(f"Processing firefigther {id}")
+        save_path = OUTPUT_SAVE_DIR/ f"pompier_{id}_{row['EMAIL']}"
         save_path.mkdir(parents=True, exist_ok=True)
 
         individual_merged_df = merged_df[merged_df["ID"]==id]
