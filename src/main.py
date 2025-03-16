@@ -16,7 +16,7 @@ def main():
 
     for _, row in df.iterrows():
         id = row["ID"]
-        print(f"Processing firefigther {id}")
+        print(f"Processing firefighter {id}")
         save_path = OUTPUT_SAVE_DIR/ f"pompier_{id}_{row['EMAIL']}"
         save_path.mkdir(parents=True, exist_ok=True)
 
