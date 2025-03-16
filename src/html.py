@@ -2,7 +2,6 @@ import base64
 from pathlib import Path
 from jinja2 import Template
 from typing import Any
-from xhtml2pdf import pisa
 
 from weasyprint import HTML
 
